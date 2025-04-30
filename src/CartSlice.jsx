@@ -12,7 +12,7 @@ export const CartSlice = createSlice({
             !action.payload ||
             typeof action.payload !== 'object' ||
             !('name' in action.payload) ||
-            !('price' in action.payload)
+            !('cost' in action.payload)
         ) {
             console.error('Invalid payload for addItem:', action.payload);
             return state; // Skip update if invalid
@@ -37,7 +37,7 @@ export const CartSlice = createSlice({
             !action.payload ||
             typeof action.payload !== 'object' ||
             !('name' in action.payload) ||
-            !('price' in action.payload)
+            !('cost' in action.payload)
         ) {
             console.error('Invalid payload for RemoveItem:', action.payload);
             return state; // Skip update if invalid
