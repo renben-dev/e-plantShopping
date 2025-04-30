@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem as addItem_GlobalCartAction, removeItem as removeItem_GlobalCartAction, updateQuantity as updateQuantity_GlobalCartAction } from '.CartSlice';
+import { addItem as addItem_GlobalCartAction, removeItem as removeItem_GlobalCartAction, updateQuantity as updateQuantity_GlobalCartAction } from './CartSlice';
 
 function ProductList({ onHomeClick }) {
     const dispatch = useDispatch();
@@ -290,7 +290,7 @@ function ProductList({ onHomeClick }) {
             {!showCart ? (
                 <div className="product-grid">
                 {plantsArray.map((plantCategory,index) => (
-                    <div> key = {index} 
+                    <div key = {index}> 
                         <h1>{plantCategory.category}</h1>
                         <div className='product-list'>
                         {plantCategory.plants.map((plant, plantIndex) => (
