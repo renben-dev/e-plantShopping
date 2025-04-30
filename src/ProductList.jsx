@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem_GlobalCartAction, removeItem_GlobalCartAction, updateQuantity_GlobalCartAction } from './path/to/CartSlice';
+import { addItem as addItem_GlobalCartAction, removeItem as removeItem_GlobalCartAction, updateQuantity as updateQuantity_GlobalCartAction } from '.CartSlice';
 
 function ProductList({ onHomeClick }) {
     const dispatch = useDispatch();
