@@ -1,11 +1,22 @@
-.about-us-container {
-    width: 1000px;
-    /* margin: 0 auto; */
-    /* padding: 20px; */
-    /* background-color: red; */
+/*.about-us-container {
+    width: 900px;
+    /* margin: 0 auto; 
+    /* padding: 20px; 
+    /* background-color: red; 
     text-align: justify;
-  }
+  }*/
   
+
+  .about-us-container {
+    width: 900px;
+    max-width: 100%; /* Prevents overflow on small screens */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    overflow-wrap: break-word; /* Breaks long words */
+}
+
+
   .about-us-heading {
     font-size: 32px;
     font-weight: bold;
@@ -20,10 +31,16 @@
     text-align: center;
   }
   
+  /*.about-us-content {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }*/
+
   .about-us-content {
     font-size: 18px;
     margin-bottom: 20px;
-  }
+    word-break: break-word; /* Additional breaking insurance */
+}
   .plant_logo_right{
     text-align: right;
   }

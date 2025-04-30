@@ -288,7 +288,7 @@ function ProductList({ onHomeClick }) {
                 </div>
                 <div style={styleObjUl}>
                     <div> <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a></div>
-                    <div>
+                    {/*<div>
                         <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
                             <h1 className='cart'>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68">
@@ -299,7 +299,7 @@ function ProductList({ onHomeClick }) {
                                 </svg>
                             </h1>
                         </a>
-                    </div>
+                    </div>*/}
                     <div style={{ position: 'relative', display: 'inline-block' }}>
                         {/* Cart Icon */}
                         <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
@@ -314,7 +314,7 @@ function ProductList({ onHomeClick }) {
                         </a>
 
                         {/* Quantity Count Overlay */}
-                        {totalCartQuantity && (
+                        {totalCartQuantity>0 && (
                             <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
                                 <h1 className="cart_quantity_count" style={{
                                 position: 'absolute',
