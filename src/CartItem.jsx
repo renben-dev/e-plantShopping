@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem as removeItem_GlobalCartAction, updateQuantity as updateQuantity_GlobalCartAction } from './CartSlice';
 import './CartItem.css';
+import { selectCartItemByName } from './CartSlice';
 
 const CartItem = ({ onContinueShopping }) => {
   const cart_current_items = useSelector(state => state.cart.items);
@@ -23,21 +24,27 @@ const CartItem = ({ onContinueShopping }) => {
    
   };
 
-
+  
 
   const handleIncrement = (item) => {
-    const cart = cart_current_items.filter((item))
+        dispatch(updateQuantity_GlobalCartAction({ name: item.name, quantity: (item.quantity || 0) + 1 }));
   };
 
   const handleDecrement = (item) => {
-   
+        if(item.quantity > 1){
+            dispatch(updateQuantity_GlobalCartAction({ name: item.name, quantity: item.quantity - 1 })); 
+        }    
   };
 
   const handleRemove = (item) => {
+    dispatch(removeItem_GlobalCartAction(item));
   };
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
+    const match = item.cost.match(/[-+]?\d*\.?\d+/);
+    const myprice =  ( match ? parseFloat(match[0]) : NaN);
+    return item.quantity * myprice;
   };
 
 

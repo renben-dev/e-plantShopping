@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
 
 export const CartSlice = createSlice({
   name: 'cart',
@@ -69,5 +70,11 @@ export const CartSlice = createSlice({
 });
 
 export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
+
+// Memoized selector (re-runs ONLY if dependencies change)
+export const selectCartItemByName = createSelector(
+  [state => state.cart.items, (state, name) => name],
+  (items, name) => items.find(item => item.name === name)
+);
 
 export default CartSlice.reducer;
