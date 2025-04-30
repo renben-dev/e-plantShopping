@@ -53,12 +53,14 @@ body {
   width: calc(100% + var(--safe-area-left) + var(--safe-area-right));
   left: calc(-1 * var(--safe-area-left)); /* Bleed into safe area */
   height: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
-  background-size: 100% 100%;
+  /*background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');*/
+  background-image: url('/images/greenhouse-background.jpg');
+  /*background-size: 100% 100%;*/
+  background-size: cover; /* Ensures no stretching (clips edges) */
+
   background-position: center;
   filter: brightness(0.8);
-
-  
+ 
   
 }
 .content {
@@ -73,8 +75,9 @@ body {
     left: var(--safe-area-left);
 
     top: 100px;
-    backdrop-filter: blur(4px);
-    background-color: rgba(0,0,0,0.5);
+    /*backdrop-filter: blur(4px);*/
+    backdrop-filter: blur(1px);
+    background-color: rgba(0,0,0,0.1);
     gap: 20px;
 
   
