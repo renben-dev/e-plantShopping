@@ -77,4 +77,8 @@ export const selectCartItemByName = createSelector(
   (items, name) => items.find(item => item.name === name)
 );
 
+// Selector to calculate total items
+export const selectTotalItems = (state) => 
+  state.cart.items.reduce((total, item) => total + item.quantity, 0);
+
 export default CartSlice.reducer;
